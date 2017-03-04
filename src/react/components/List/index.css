@@ -1,0 +1,25 @@
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item {
+    height: 50px;
+    border-bottom: 1px solid #eeeeee;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.list-item span {
+    margin-top: 10px;
+    display: flex;
+    align-self: flex-start;
+    font-size: 12px !important;
+    color: #586069 !important;
+}

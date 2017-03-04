@@ -1,0 +1,15 @@
+.git-repos {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    border: 1px solid #999999;
+    margin: 10px;
+    padding: 20px;
+}
+
+.git-search {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 30px;
+}

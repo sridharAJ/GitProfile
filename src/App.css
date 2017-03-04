@@ -1,0 +1,29 @@
+.App {
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+}
+
+input {
+    width: 150px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-right: 10px;
+}
+
+button.primary {
+    background-color: #1abc9c;
+    color: white;
+}
+
+button {
+    margin-right: 20px;
+    border: none;
+    width: 80px;
+    cursor: pointer;
+    border-radius: 4px;
+}

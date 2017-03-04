@@ -1,0 +1,10 @@
+.repos-search {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 30px;
+}
+
+.repos-list-group {
+    display: flex;
+    flex-direction: column;
+}
