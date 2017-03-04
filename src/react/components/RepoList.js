@@ -14,17 +14,13 @@ class RepoList extends Component {
         this.state = {
             repos: [],
             reponame: "",
-            error: "",
-            loader: false
+            error: ""
         };
 
         this.resetAll = this.resetAll.bind(this);
     }
 
     getReposByUserName(props) {
-        this.setState({
-            loader: true
-        });
         SuperAgent
             .get(`https://api.github.com/users/${props.username}/repos`)
             .set('Accept', 'application/vnd.github.v3+json')
@@ -38,14 +34,12 @@ class RepoList extends Component {
                     }
                     this.setState({
                         repos,
-                        error: "",
-                        loader: false
+                        error: ""
                     });
                 }else {
                     this.setState({
                         error: "User not found",
-                        repos: [],
-                        loader: false
+                        repos: []
                     })
                 }
             })
