@@ -18,6 +18,14 @@ class RepoList extends Component {
         };
 
         this.resetAll = this.resetAll.bind(this);
+        this.handleOnChange = this.handleOnChange.bind(this);
+    }
+
+    handleOnChange(e) {
+        let reponame = e.target.value;
+        this.setState({
+            reponame
+        })
     }
 
     getReposByUserName(props) {
@@ -43,6 +51,20 @@ class RepoList extends Component {
                     })
                 }
             })
+    }
+
+    getList() {
+        let {reponame, repos} = this.state;
+        if(!reponame) return repos;
+        let searchList = repos.filter((item) => {
+            let name = item.name.toLowerCase();
+            let repoName = reponame.toLowerCase();
+            if(name.indexOf(repoName) != -1){
+                return item
+            }
+        });
+
+        return searchList;
     }
 
     componentDidMount() {
@@ -71,10 +93,10 @@ class RepoList extends Component {
                         <div className="repos-list-group">
                             <h3 className="repos-list-title">Repos</h3>
                             <div className="repos-search">
-                                <input id="reponame" value={this.state.reponame} />
+                                <input id="reponame" value={this.state.reponame} onChange={this.handleOnChange}/>
                                 <button onClick={this.resetAll}>x</button>
                             </div>
-                            <List list={this.state.repos}/>
+                            <List list={this.getList()}/>
                         </div>
                 }
             </div>
